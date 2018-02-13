@@ -1,18 +1,17 @@
 
 
 window.onload = function() {
-  $("#start").on("click", countdown.start);
-  $("#stop").on("click", countdown.stop);
-};
 
+// creates a variable to hold my questions
 var questions = ["q1", "q2", "q3", "q4", "q5"];
+
+// creates the variable to move to the next question starting at one since the very first question will never be 'next'.
+ var nextQuestion = questions+1
 
 var countdown = {
   time: 30,
   reset: function() {
     countdown.time = 30;
-    // Changes the "display" div to "30:00."
-    $("#display").text("30:00");
   },
   start: function() {
     // Use setInterval to start the count here and set the clock to running.
@@ -40,7 +39,7 @@ var countdown = {
 // start a timer until the next question is selected
 countdown.time = 5;
 countdown.time --;
-for (var i = 0; i < questions.length; i++) {
+for (var i = 1; i < questions.length; i++) {
   questions[i]
 }
 
@@ -55,7 +54,7 @@ alert("js super hero quiz")
 var q1;
 countdown.start;
 q1 = prompt ("who is the leader of the Teen Titans?")
-    if (q1== "Robin"){
+    if (q1=== "Robin"){
       score++;
       countdown.stop;
       alert("Correct, good job!")
@@ -130,8 +129,4 @@ q5 = prompt ("Which anti-hero is known for his 4th wall breaks?")
       alert("sorry, thats incorrect.")
       nextQuestion;
     }
-
-
-
-
- </script>
+  };
