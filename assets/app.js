@@ -1,4 +1,4 @@
- <script type="text/javascript"
+
 
 window.onload = function() {
   $("#start").on("click", countdown.start);
@@ -11,29 +11,29 @@ var countdown = {
   time: 30,
   reset: function() {
     countdown.time = 30;
-    // DONE: Changes the "display" div to "30:00."
+    // Changes the "display" div to "30:00."
     $("#display").text("30:00");
   },
   start: function() {
-    // DONE: Use setInterval to start the count here and set the clock to running.
+    // Use setInterval to start the count here and set the clock to running.
     if (!clockRunning) {
         intervalId = setInterval(countdown.count, 1000);
         clockRunning = true;
     }
   },
   stop: function() {
-    // DONE: Use clearInterval to stop the count here and set the clock to not be running.
+    // Use clearInterval to stop the count here and set the clock to not be running.
     clearInterval(intervalId);
     clockRunning = false;
   },
   count: function() {
-    // DONE: increment time by -1, remember we cant use "this" here.
+    //reduces time by -1
     countdown.time--;
-    // DONE: Get the current time, pass that into the stopwatch.timeConverter function,
+    //  Get the current time, pass that into the stopwatch.timeConverter function,
     //       and save the result in a variable.
     var converted = stopwatch.timeConverter(stopwatch.time);
     console.log(converted);
-    // DONE: Use the variable we just created to show the converted time in the "display" div.
+    // Use the variable created to show the converted time in the "display" div.
     $("#display").text(converted);
   },
   nextQuestion: function(){
@@ -130,8 +130,3 @@ q5 = prompt ("Which anti-hero is known for his 4th wall breaks?")
       alert("sorry, thats incorrect.")
       nextQuestion;
     }
-
-
-
-
- </script>
